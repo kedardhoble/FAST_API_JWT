@@ -14,7 +14,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 # User model for authentication
 class User:
-    def __init__(self, username: str, password: str):
+    def __init__(self, username: str, password: str = None):
         self.username = username
         self.password = password
 
