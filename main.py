@@ -27,6 +27,8 @@ fake_users_db = {
     }
 }
 
+# Create an OAuth2PasswordBearer instance
+# OAuth2PasswordBearer for handling token authentication
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
@@ -58,9 +60,6 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-
-# OAuth2PasswordBearer for handling token authentication
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # Password hashing
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
